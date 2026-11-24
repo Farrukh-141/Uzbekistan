@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Государственные символы Узбекистана</title>
+    <style>
+        :root {
+            --uz-blue: #0072CE;
+            --uz-green: #1EB53A;
+            --uz-red: #CE1126;
+            --uz-gold: #D4AF37;
+            --bg-dark: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, sans-serif; }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Верхняя полоса в цветах флага */
+        .top-flag-bar {
+            height: 8px;
+            width: 100%;
+            background: linear-gradient(90deg, var(--uz-blue) 33%, var(--uz-red) 34%, #ffffff 35%, #ffffff 65%, var(--uz-red) 66%, var(--uz-green) 67%);
+        }
+
+        /* Контейнер слайдов */
+        .slides-container {
+            flex: 1;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        .slide {
+            display: none;
+            width: 100%;
+            max-width: 1100px;
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,255,255,0.1);
+            animation: fadeIn 0.4s ease;
+        }
+
+        .slide.active { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center; }
+        .slide.title-slide.active { display: flex; flex-direction: column; text-align: center; align-items: center; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 { font-size: 3.2rem; background: linear-gradient(90deg, #38bdf8, #4ade80); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 20px; }
+        h2 { font-size: 2.2rem; color: #38bdf8; margin-bottom: 10px; }
+        .date-badge { display: inline-block; background: rgba(212, 175, 55, 0.2); color: var(--uz-gold); padding: 5px 14px; border-radius: 20px; font-weight: 600; margin-bottom: 25px; border: 1px solid var(--uz-gold); }
+
+        ul { list-style: none; }
+        li { font-size: 1.2rem; line-height: 1.6; margin-bottom: 15px; padding-left: 25px; position: relative; color: #e2e8f0; }
+        li::before { content: "✦"; position: absolute; left: 0; color: var(--uz-green); }
+
+        /* Визуальный блок справа */
+        .visual-box {
+            background: rgba(15, 23, 42, 0.6);
+            border-radius: 16px;
+            padding: 25px;
+            text-align: center;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        /* Нарисованный кодом флаг Узбекистана */
+        .uz-flag-css {
+            width: 100%;
+            height: 180px;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+        }
+        .f-blue { flex: 1; background: var(--uz-blue); position: relative; display: flex; align-items: center; padding-left: 15px; color: white; font-size: 1.4rem; }
+        .f-red { height: 4px; background: var(--uz-red); }
+        .f-white { flex: 1; background: #ffffff; }
+        .f-green { flex: 1; background: var(--uz-green); }
+
+        .emoji-icon { font-size: 5rem; margin-bottom: 15px; display: block; }
+        .caption { color: var(--text-muted); font-size: 0.95rem; margin-top: 15px; }
+
+        /* Нижняя панель навигации */
+        .controls {
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(15, 23, 42, 0.9);
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        button {
+            background: var(--uz-blue);
+            color: white;
+            border: none;
+            padding: 10px 22px;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        button:hover { background: #0284c7; }
+        .slide-counter { color: var(--text-muted); font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <div class="top-flag-bar"></div>
+
+    <div class="slides-container">
+        <!-- Слайд 1: Титульный -->
+        <div class="slide title-slide active">
+            <span class="date-badge">Республика Узбекистан</span>
+            <h1>Государственные символы</h1>
+            <p style="font-size: 1.4rem; color: var(--text-muted); max-width: 650px; margin-bottom: 30px;">
+                Флаг, Герб и Гимн — священные знаки суверенитета, истории и единства народа Узбекистана.
+            </p>
+            <p style="color: var(--uz-gold); font-weight: 600;">Подготовил: [Твое Имя] • Нажми → для старта</p>
+        </div>
+
+        <!-- Слайд 2: Флаг -->
+        <div class="slide">
+            <div>
+                <span class="date-badge">Принят 18 ноября 1991 года</span>
+                <h2>Государственный флаг</h2>
+                <ul>
+                    <li><strong>Голубой цвет</strong> — символ вечного неба и чистой воды.</li>
+                    <li><strong>Белый цвет</strong> — символ мира и чистоты помыслов.</li>
+                    <li><strong>Зеленый цвет</strong> — благодатная природа и обновление.</li>
+                    <li><strong>Красные полосы</strong> — жизненная сила, текущая в жилах.</li>
+                    <li><strong>Полумесяц и 12 звезд</strong> — независимость и безоблачное небо.</li>
+                </ul>
+            </div>
+            <div class="visual-box">
+                <div class="uz-flag-css">
+                    <div class="f-blue">☪ ⭐⭐⭐⭐⭐⭐</div>
+                    <div class="f-red"></div>
+                    <div class="f-white"></div>
+                    <div class="f-red"></div>
+                    <div class="f-green"></div>
+                </div>
+                <p class="caption">Соотношение сторон флага — 1:2</p>
+            </div>
+        </div>
+
+        <!-- Слайд 3: Герб -->
+        <div class="slide">
+            <div>
+                <span class="date-badge">Принят 2 июля 1992 года</span>
+                <h2>Государственный герб</h2>
+                <ul>
+                    <li><strong>Птица Хумо</strong> с раскрытыми крыльями — символ счастья и свободы.</li>
+                    <li><strong>Восьмиконечная звезда</strong> — знак утверждения республики.</li>
+                    <li><strong>Колосья пшеницы и хлопок</strong> — богатство и труд народа.</li>
+                    <li><strong>Восходящее солнце</strong> — светлый путь развития страны.</li>
+                    <li><strong>Две реки (Амударья и Сырдарья)</strong> — истоки жизни региона.</li>
+                </ul>
+            </div>
+            <div class="visual-box">
+                <span class="emoji-icon">🕊️☀️🌾</span>
+                <p style="font-weight: bold; color: var(--uz-gold);">Символ мира и процветания</p>
+                <p class="caption">Можешь заменить этот блок на файл gerb.png в папке проекта</p>
+            </div>
+        </div>
+
+        <!-- Слайд 4: Гимн -->
+        <div class="slide">
+            <div>
+                <span class="date-badge">Принят 10 декабря 1992 года</span>
+                <h2>Государственный гимн</h2>
+                <ul>
+                    <li><strong>Автор текста:</strong> народный поэт Абдулла Арипов.</li>
+                    <li><strong>Автор музыки:</strong> композитор Мутал Бурханов.</li>
+                    <li>Воспевает мужество предков, красоту родной земли и веру в будущее.</li>
+                    <li>Исполняется на государственных праздниках и международных победах.</li>
+                </ul>
+            </div>
+            <div class="visual-box">
+                <span class="emoji-icon">🎵🇺🇿</span>
+                <p style="font-style: italic; color: #cbd5e1; font-size: 1.05rem;">
+                    «Serquyosh, hur o‘lkam, elga baxt, najot,<br>
+                    Sen o‘zing do‘stlarga yo‘ldosh, mehribon!...»
+                </p>
+                <p class="caption">Первые строки Государственного гимна</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="controls">
+        <button onclick="changeSlide(-1)">← Назад</button>
+        <span class="slide-counter" id="counter">1 / 4</span>
+        <button onclick="changeSlide(1)">Вперед →</button>
+    </div>
+
+    <script>
+        let current = 0;
+        const slides = document.querySelectorAll('.slide');
+        const counter = document.getElementById('counter');
+
+        function showSlide(index) {
+            slides.forEach(s => s.classList.remove('active'));
+            current = (index + slides.length) % slides.length;
+            slides[current].classList.add('active');
+            counter.textContent = `${current + 1} / ${slides.length}`;
+        }
+
+        function changeSlide(step) { showSlide(current + step); }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') changeSlide(1);
+            if (e.key === 'ArrowLeft') changeSlide(-1);
+        });
+    </script>
+</body>
+</html>
